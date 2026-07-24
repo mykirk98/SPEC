@@ -1,5 +1,0 @@
-# clang-format config for C++ sources — see rules/cpp-code-style.md
-# Run: clang-format -i <files>  (picks up this file automatically)
-BasedOnStyle: Microsoft
-IndentWidth: 4
-UseTab: Never
