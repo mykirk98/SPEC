@@ -24,11 +24,11 @@
 
 ### 5. Write a log entry after each step
 - When a step is complete, append an entry to the log file before stopping.
-- Log file: `<plan-filename>-log.md` in the plan's directory (e.g. `plan01.md` → `plan01-log.md`); create it if absent.
+- Log file: `<plan-filename>-log.md` next to the plan file (e.g. `plan/plan01.md` → `plan/plan01-log.md`); create it if absent.
 
 Each log entry must follow the format in `.claude/template/plan-log-template.md`.
 
 ### 6. Commit after each step
 - When a step is complete, commit the code changes following `commit-convention.md`.
-- Do **not** include plan files (`plan*.md`, `plan*-log.md`) in this commit.
-- After **all** steps are complete, commit `plan*.md` and `plan*-log.md` together in a single `docs` commit.
+- Do **not** include plan files (`plan/*.md`) in this commit.
+- After **all** steps are complete, commit everything under `plan/` in a single `docs` commit.

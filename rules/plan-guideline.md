@@ -16,6 +16,8 @@
 
 ## Plan Structure
 
+Plan files live under `plan/`, not the project root (e.g. `plan/plan01.md`).
+
 Plan structure follows `.claude/template/plan-template.md`.
 
 Write plan and log files in Korean, but keep the template's fixed labels and the `[Structural]`/`[Behavioral]` tags as-is.
