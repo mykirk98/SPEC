@@ -71,3 +71,4 @@
 
 - Required on all public classes, methods, and functions
 - Use Google-style docstrings; skip `Args`/`Returns` for simple, self-evident functions
+- Write in English
