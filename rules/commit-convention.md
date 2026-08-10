@@ -53,7 +53,7 @@
 - Separate from the subject with a **blank line**
 - Explain **why** the change was made, not what was changed
 - Write each paragraph as a single line — no manual line breaks (e.g. 72-char wrap)
-- Keep it under **500 characters**
+- Keep it under **300 characters**
 - Do not mention co-authored by AI
 
 ---
