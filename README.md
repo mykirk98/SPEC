@@ -1,6 +1,8 @@
 # SPEC
 
 > **S**oftware **P**lanning & **E**ngineering **C**onventions — a Claude Code rule set for plan-driven, disciplined development.
+>
+> Version 1.01
 
 SPEC makes a coding agent work like an engineer instead of an autocomplete. Rather than letting it sprint through a vague request, SPEC enforces a loop: write a plan, execute one step, stop for review, log it, commit it. Around that loop sit the standards each step must meet — structural and behavioral changes kept apart, and a commit gate that requires green tests, formatter, and linter.
 
@@ -21,7 +23,7 @@ SPEC makes a coding agent work like an engineer instead of an autocomplete. Rath
 | `python-code-style.md` | Python conventions, enforced by ruff |
 | `cpp-code-style.md` | C++ conventions, enforced by clang-format and clang-tidy |
 
-`tdd-principles.md` is opt-in — delete it if you don't work test-first. The commit gate still requires the suite to pass; dropping the file changes only *when* tests get written, not whether they must be green.
+`tdd-principles.md` is opt-in — delete it if you don't work test-first. The commit gate still requires the suite to pass; only the order changes.
 
 ### `template/` — starting points, not rules
 
@@ -46,9 +48,19 @@ Then, in your project:
 
 1. **Keep one language guide.** Delete the `*-code-style.md` you don't need — each is written to stand alone, so a Python project carries only the Python one.
 2. **Wire up the tool configs.** Merge `[tool.ruff]` from `template/pyproject.toml` into your own `pyproject.toml`, and copy `.clang-format` / `.clang-tidy` to the project root. The rules name these tools; without the configs at the root, the commit gate has nothing to run.
-3. **Create `plan/`.** Plans and their logs live there — `plan/plan01.md` pairs with `plan/plan01-log.md`.
+3. **Create `plan/`.** Plans and their logs live there.
 
-Files under `.claude/rules/` load at the start of every session automatically. No `@import` or CLAUDE.md wiring is needed.
+No `@import` or CLAUDE.md wiring is needed.
+
+## Usage
+
+SPEC runs on a plan file. Nothing happens until one exists.
+
+1. **Draft the plan.** Copy `.claude/template/plan-template.md` to `plan/plan01.md` and fill in Goal, Scope, and a rough list of Steps.
+2. **Hand it to Claude.** Give it the path. Claude refines the Steps against `plan-guideline.md` — dependency order, `[Structural]`/`[Behavioral]` tags, Acceptance Criteria — and leaves anything unresolved under Open Questions.
+3. **Approve it.** Nothing is executed until you do.
+4. **Say go.** Claude executes the first unchecked step only, marks it `[x]`, appends to `plan/plan01-log.md`, commits the code, and stops for your review.
+5. **Repeat** until every step is checked off. The plan and its log are committed at the end, in one `docs` commit.
 
 ## Design decisions
 
