@@ -1,4 +1,4 @@
-# <Plan Title> 진행 기록
+# <Plan Title> Execution Log
 
 ---
 
@@ -6,7 +6,7 @@
 
 ### Commands executed
 ```bash
-# 실행한 명령어
+# commands run
 ```
 
 ### Issues and resolutions
@@ -15,7 +15,7 @@
 |-------|-------|------------|
 |       |       |            |
 
-(문제가 없으면 "None"이라고 적는다.)
+(Write "None" if no issues occurred.)
 
 ### Result
 - 

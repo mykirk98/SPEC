@@ -20,7 +20,7 @@ Plan files live under `plan/`, not the project root (e.g. `plan/plan01.md`).
 
 Plan structure follows `.claude/template/plan-template.md`.
 
-Write plan and log files in Korean, but keep the template's fixed labels and the `[Structural]`/`[Behavioral]` tags as-is.
+Keep the template's fixed labels and the `[Structural]`/`[Behavioral]` tags as-is.
 
 ---
 
@@ -41,12 +41,12 @@ Write plan and log files in Korean, but keep the template's fixed labels and the
 - Every step must include Acceptance Criteria — these define what tests need to pass for the step to be complete
 
 ```markdown
-- [ ] Step 1: [Structural] 할인 계산 로직을 헬퍼로 추출
+- [ ] Step 1: [Structural] Extract the discount calculation into a helper
   Acceptance Criteria:
-  - 기존 테스트가 모두 통과한다 (동작 변경 없음)
+  - All existing tests pass (no behavior change)
 
-- [ ] Step 2: [Behavioral] 재구매 사용자를 위한 로열티 할인 추가
+- [ ] Step 2: [Behavioral] Add a loyalty discount for repeat customers
   Acceptance Criteria:
-  - 3회 이상 구매한 사용자에게 10% 할인이 적용된다
-  - 신규 사용자에게는 할인이 적용되지 않는다
+  - A customer with 3 or more purchases gets 10% off
+  - A new customer gets no discount
 ```

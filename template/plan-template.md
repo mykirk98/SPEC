@@ -1,7 +1,7 @@
 # Plan: <Feature Name>
 
 ## Goal
-<!-- 이 플랜이 무엇을 달성하는지, 왜 필요한지 1-2문장으로 설명한다. -->
+<!-- What this plan achieves and why it is needed, in 1-2 sentences. -->
 
 ## Scope
 - **In:** 
